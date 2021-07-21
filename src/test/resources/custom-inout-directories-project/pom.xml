@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ruleoftech.test</groupId>
-    <artifactId>basic</artifactId>
+    <artifactId>custom-inout-directories-project</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Basic</name>
+    <name>Custom In Out</name>
 
     <dependencies>
         <dependency>
@@ -21,7 +21,7 @@
     <build>
 
         <!-- Added to keep everything out of the source tree -->
-        <directory>${project.basedir}/../../../../target/test-harness/basic-project/target</directory>
+        <directory>${project.basedir}/../../../../target/test-harness/custom-inout-directories-project/target</directory>
 
         <plugins>
             <plugin>
@@ -36,7 +36,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <pegdownExtensions>TABLES</pegdownExtensions>
+                    <inputDirectory>${basedir}/docs</inputDirectory>
+                    <outputDirectory>${project.build.directory}/docs</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
